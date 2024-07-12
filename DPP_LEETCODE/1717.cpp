@@ -1,3 +1,4 @@
+// this  can be solve by using stack too.
 class Solution {
 public:
   int find(string &s,int val,char c,char p){
