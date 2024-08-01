@@ -103,5 +103,3 @@
           YEAR(CURRENT_DATE) - YEAR(joinDate) AS years_with_company 
    FROM employees;
    ```
-
-Feel free to run these queries on your database to practice and validate your understanding! If you need more specific queries or have any other questions, let me know.
