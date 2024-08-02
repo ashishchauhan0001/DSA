@@ -1,36 +1,32 @@
-#include <vector>
-#include <unordered_map>
-#include <algorithm>
+#include<bits/stdc++.h>
 using namespace std;
 
-int minimumChanges(vector<int>& nums, int k) {
-    int n = nums.size();
-    vector<int> changeCount(k + 1, 0);  // To count changes for each possible X from 0 to k
+class Complex{
+    private:
+    int real;
+    int img;
+    public:
+    Complex(){};
+    Complex(int a,int b):real(a),img(b){};
     
-    for (int i = 0; i < n / 2; ++i) {
-        int a = nums[i];
-        int b = nums[n - i - 1];
-        
-        for (int x = 0; x <= k; ++x) {
-            int currentChanges = 0;
-            if (abs(a - b) != x) {
-                // Calculate changes needed to make abs(a - b) equal to x
-                if (a != b + x && a != b - x) currentChanges++;
-                if (b != a + x && b != a - x) currentChanges++;
-            }
-            changeCount[x] += currentChanges;
-        }
+    Complex operator+(Complex &obj){
+        Complex res;
+        res.real=real+obj.real;
+        res.img=img+obj.img;
+        return res;
     }
-    
-    int minChanges = *min_element(changeCount.begin(), changeCount.end());
-    return minChanges;
-}
+    void print(){
+        cout<<real<<"+"<<img<<"i"<<endl;
+    }
 
-// Example usage
-#include <iostream>
-int main() {
-    vector<int> nums = {6, 3, 6, 6, 6, 3};
-    int k = 6;
-    cout << minimumChanges(nums, k) << endl; // Output should be 3
-    return 0;
+};
+
+int main()
+{
+    Complex obj1(1,2);
+    Complex obj2(2,3);
+    Complex obj3=obj1+obj2;
+    obj3.print();
+
+ return 0;
 }
