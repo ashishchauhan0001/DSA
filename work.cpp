@@ -1,32 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Complex{
-    private:
-    int real;
-    int img;
-    public:
-    Complex(){};
-    Complex(int a,int b):real(a),img(b){};
-    
-    Complex operator+(Complex &obj){
-        Complex res;
-        res.real=real+obj.real;
-        res.img=img+obj.img;
-        return res;
-    }
-    void print(){
-        cout<<real<<"+"<<img<<"i"<<endl;
-    }
-
-};
-
 int main()
 {
-    Complex obj1(1,2);
-    Complex obj2(2,3);
-    Complex obj3=obj1+obj2;
-    obj3.print();
+    int n,m;
+    cin>>n>>m;
+    vector<vector<int>> ans(n,vector<int>(m));
 
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cin>>ans[i][j];
+        }
+    }
+
+     for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+           cout<<ans[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    
  return 0;
 }
