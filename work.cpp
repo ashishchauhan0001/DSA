@@ -3,22 +3,20 @@ using namespace std;
 
 int main()
 {
-    int n,m;
-    cin>>n>>m;
-    vector<vector<int>> ans(n,vector<int>(m));
-
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            cin>>ans[i][j];
+    int n;
+    cin>>n;
+    vector<bool>arr(n,true);
+    int i=2;
+    while(i<n){
+        int inc=i+1;
+        for(int j=inc;j<n;j=j+inc){
+            arr[j]=!arr[j];
         }
+        i++;
     }
 
-     for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-           cout<<ans[i][j]<<" ";
-        }
-        cout<<endl;
+    for(auto it:arr){
+        cout<<it<<" ";
     }
-    
  return 0;
 }
