@@ -1,11 +1,7 @@
 class Solution {
 public:
    
-   void reverseSubstring(std::string &str, int start, int end) {
-    while (start < end) {
-        swap(str[start], str[end]);
-        start++;
-        end--;
+ c
     }
 }
 string reverseParentheses(std::string s) {
